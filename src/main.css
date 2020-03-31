@@ -1,0 +1,124 @@
+/*
+  elm-hot creates an additional div wrapper around the app to make HMR possible.
+  This could break styling in development mode if you are using Elm UI.
+
+  More context in the issue:
+    https://github.com/halfzebra/create-elm-app/issues/320
+*/
+[data-elm-hot="true"] {
+  height: inherit;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+
+
+html {
+    font-family: 'Bitter', serif;
+    color: white;
+    background-image: url('/index.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    justify-content: space-around;
+}
+
+#text {
+    width: 30em;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+}
+
+#name {
+    margin-right: 0.4em;
+}
+
+@keyframes slide {
+    0%{
+      background-position: 0 0;
+    }
+    100%{
+      background-position: 98px 0;
+    }
+}
+
+#sep {
+    flex-grow: 1;
+    margin-bottom: 0.4em;
+    background-image: url('/fish.png');
+    background-size: contain;
+    background-repeat: repeat-x;
+    animation: slide 6s linear infinite;
+    height: 20px;
+}
+
+#title {
+    font-size: 3em;
+    display: flex;
+    margin-bottom: -0.2em;
+    align-items: flex-end;
+}
+
+p {
+    margin: 20px 0;
+}
+
+a {
+    color: white;
+    border-bottom: 1px dashed white;
+    padding-bottom: 0px;
+    text-decoration: none;
+    transition: padding 0.25s;
+}
+
+a:hover {
+    padding-bottom: 2px;
+}
