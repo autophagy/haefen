@@ -44,19 +44,19 @@ content : List (List (Html Msg))
 content =
     [ [ text "I'm a Berlin based software developer, mostly writing Python. I adore functional programming with Haskell and Elm. Also into cybernetcs, body horror and Xenofeminism." ]
     , [ text "I help organise "
-      , a [ href "#" ] [ text "Pyladies Berlin" ]
+      , a [ href "https://berlin.pyladies.com/" ] [ text "Pyladies Berlin" ]
       , text " and do public speaking at events like "
       , a [ href "https://www.youtube.com/watch?v=qLoMFu14wmk" ] [ text "PyCon UK." ]
       ]
     , [ text "Find my work in "
-      , a [ href "#" ] [ text "Hraew" ]
+      , a [ href "https://hraew.autophagy.io/" ] [ text "Hrǽw" ]
       , text " or on "
-      , a [ href "#" ] [ text "Github." ]
+      , a [ href "github.com/autophagy/" ] [ text "Github." ]
       ]
     , [ text "Contact me via "
-      , a [ href "#" ] [ text "email" ]
+      , a [ href "mailto:eala@autophagy.io" ] [ text "email" ]
       , text " or "
-      , a [ href "#" ] [ text "Twitter." ]
+      , a [ href "twitter.com/autophagian" ] [ text "Twitter." ]
       ]
     ]
 
