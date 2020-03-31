@@ -42,7 +42,7 @@ intro =
 
 content : List (List (Html Msg))
 content =
-    [ [ text "I'm a Berlin based software developer, mostly writing Python. I adore functional programming with Haskell and Elm. Also into cybernetcs, body horror and Xenofeminism." ]
+    [ [ text "I'm a Berlin based software developer, mostly writing Python. I adore functional programming with Haskell and Elm. Also into cybernetics, body horror and Xenofeminism." ]
     , [ text "I help organise "
       , a [ href "https://berlin.pyladies.com/" ] [ text "Pyladies Berlin" ]
       , text " and do public speaking at events like "
