@@ -91,7 +91,7 @@ view : Model -> Html Msg
 view model =
     let
         i18n =
-            \c -> translate model.lang c |> text
+            translate model.lang >> text
     in
     div [ id "text" ]
         [ div [ id "title" ] [ span [ id "name" ] [ i18n greeting ], span [ id "sep" ] [] ]
