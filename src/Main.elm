@@ -9,13 +9,28 @@ import Html.Attributes exposing (href, id, src)
 ---- MODEL ----
 
 
+type Language
+    = EN
+
+
 type alias Model =
-    {}
+    { lang : Language }
+
+
+type alias I18n =
+    { en : String }
 
 
 init : ( Model, Cmd Msg )
 init =
-    ( {}, Cmd.none )
+    ( { lang = EN }, Cmd.none )
+
+
+translate : Language -> I18n -> String
+translate language i18n =
+    case language of
+        EN ->
+            i18n.en
 
 
 
@@ -35,37 +50,72 @@ update msg model =
 ---- VIEW ----
 
 
-intro : String
+greeting : I18n
+greeting =
+    { en = "Hi. I'm Mika." }
+
+
+intro : I18n
 intro =
-    "Hi. I'm Mika."
+    { en = "I'm a Berlin based software developer, mostly writing Python. I adore functional programming with Haskell and Elm. Also into cybernetics, body horror and Xenofeminism." }
 
 
-content : List (List (Html Msg))
-content =
-    [ [ text "I'm a Berlin based software developer, mostly writing Python. I adore functional programming with Haskell and Elm. Also into cybernetics, body horror and Xenofeminism." ]
-    , [ text "I help organise "
-      , a [ href "https://berlin.pyladies.com/" ] [ text "Pyladies Berlin" ]
-      , text " and do public speaking at events like "
-      , a [ href "https://www.youtube.com/watch?v=qLoMFu14wmk" ] [ text "PyCon UK." ]
-      ]
-    , [ text "Find my work in "
-      , a [ href "https://hraew.autophagy.io/" ] [ text "Hrǽw" ]
-      , text " or on "
-      , a [ href "github.com/autophagy/" ] [ text "Github." ]
-      ]
-    , [ text "Contact me via "
-      , a [ href "mailto:eala@autophagy.io" ] [ text "email" ]
-      , text " or "
-      , a [ href "twitter.com/autophagian" ] [ text "Twitter." ]
-      ]
-    ]
+orga : { text1 : I18n, pyladies : I18n, text2 : I18n, pyconuk : I18n }
+orga =
+    { text1 = { en = "I help organise " }
+    , pyladies = { en = "Pyladies Berlin" }
+    , text2 = { en = " and do public speaking at events like " }
+    , pyconuk = { en = "PyCon UK." }
+    }
+
+
+work : { text1 : I18n, hraew : I18n, text2 : I18n, github : I18n }
+work =
+    { text1 = { en = "Find my work in " }
+    , hraew = { en = "Hrǽw" }
+    , text2 = { en = " or on " }
+    , github = { en = "Github." }
+    }
+
+
+contact : { text1 : I18n, email : I18n, text2 : I18n, twitter : I18n }
+contact =
+    { text1 = { en = "Contact me via " }
+    , email = { en = "email" }
+    , text2 = { en = " or on " }
+    , twitter = { en = "Twitter." }
+    }
 
 
 view : Model -> Html Msg
 view model =
+    let
+        i18n =
+            \c -> translate model.lang c |> text
+    in
     div [ id "text" ]
-        [ div [ id "title" ] [ span [ id "name" ] [ text intro ], span [ id "sep" ] [] ]
-        , div [ id "content" ] (List.map (p []) content)
+        [ div [ id "title" ] [ span [ id "name" ] [ i18n greeting ], span [ id "sep" ] [] ]
+        , div [ id "content" ]
+            [ p [] [ i18n intro ]
+            , p []
+                [ i18n orga.text1
+                , a [ href "https://berlin.pyladies.com/" ] [ i18n orga.pyladies ]
+                , i18n orga.text2
+                , a [ href "https://www.youtube.com/watch?v=qLoMFu14wmk" ] [ i18n orga.pyconuk ]
+                ]
+            , p []
+                [ i18n work.text1
+                , a [ href "https://hraew.autophagy.io/" ] [ i18n work.hraew ]
+                , i18n work.text2
+                , a [ href "https://github.com/autophagy/" ] [ i18n work.github ]
+                ]
+            , p []
+                [ i18n contact.text1
+                , a [ href "mailto:eala@autophagy.io" ] [ i18n contact.email ]
+                , i18n contact.text2
+                , a [ href "https://twitter.com/autophagian" ] [ i18n contact.twitter ]
+                ]
+            ]
         ]
 
 
