@@ -65,7 +65,7 @@ view : Model -> Html Msg
 view model =
     div [ id "text" ]
         [ div [ id "title" ] [ span [ id "name" ] [ text intro ], span [ id "sep" ] [] ]
-        , div [ id "content" ] (List.map (\c -> p [] c) content)
+        , div [ id "content" ] (List.map (p []) content)
         ]
 
 
