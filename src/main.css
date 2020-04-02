@@ -59,7 +59,7 @@ table {
 html {
     font-family: 'Bitter', serif;
     color: white;
-    background-image: url('/index.png');
+    background-image: url('/index.gif');
     background-repeat: no-repeat;
     background-size: cover;
     font-size: 20px;
@@ -88,16 +88,6 @@ html {
     100%{
       background-position: 98px 0;
     }
-}
-
-#sep {
-    flex-grow: 1;
-    margin-bottom: 0.4em;
-    background-image: url('/fish.png');
-    background-size: contain;
-    background-repeat: repeat-x;
-    animation: slide 6s linear infinite;
-    height: 20px;
 }
 
 #title {

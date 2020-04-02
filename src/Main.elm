@@ -94,7 +94,7 @@ view model =
             translate model.lang >> text
     in
     div [ id "text" ]
-        [ div [ id "title" ] [ span [ id "name" ] [ i18n greeting ], span [ id "sep" ] [] ]
+        [ div [ id "title" ] [ span [ id "name" ] [ i18n greeting ] ]
         , div [ id "content" ]
             [ p [] [ i18n intro ]
             , p []
