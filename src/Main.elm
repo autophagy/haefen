@@ -1,8 +1,8 @@
 module Main exposing (..)
 
 import Browser
-import Html exposing (Html, a, div, h1, img, p, span, text)
-import Html.Attributes exposing (href, id, src)
+import Html exposing (Html, a, div, p, span, text)
+import Html.Attributes exposing (href, id)
 
 
 
@@ -14,7 +14,7 @@ type Language
 
 
 type alias Model =
-    { lang : Language }
+    Language
 
 
 type alias I18n =
@@ -23,7 +23,7 @@ type alias I18n =
 
 init : ( Model, Cmd Msg )
 init =
-    ( { lang = EN }, Cmd.none )
+    ( EN, Cmd.none )
 
 
 translate : Language -> I18n -> String
@@ -42,7 +42,7 @@ type Msg
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
+update _ model =
     ( model, Cmd.none )
 
 
@@ -88,10 +88,10 @@ contact =
 
 
 view : Model -> Html Msg
-view model =
+view language =
     let
         i18n =
-            translate model.lang >> text
+            translate language >> text
     in
     div [ id "text" ]
         [ div [ id "title" ] [ span [ id "name" ] [ i18n greeting ] ]
