@@ -57,7 +57,11 @@ greeting =
 
 intro : I18n
 intro =
-    { en = "I'm a Berlin based software developer, mostly writing Python. I adore functional programming with Haskell and Elm. Also into cybernetics, body horror and Xenofeminism." }
+    { en = """
+    I'm a Berlin based software developer, mostly writing Python. Though,
+    secretly, I really like type systems and functional programming with
+    Haskell/Elm.
+    """ }
 
 
 orga : { text1 : I18n, pyladies : I18n, text2 : I18n, pyconuk : I18n }
@@ -80,7 +84,7 @@ work =
 
 contact : { text1 : I18n, email : I18n, text2 : I18n, twitter : I18n }
 contact =
-    { text1 = { en = "Contact me via " }
+    { text1 = { en = "Currently looking for new opportunities, especially with a functional programming focus. Contact me via " }
     , email = { en = "email" }
     , text2 = { en = " or on " }
     , twitter = { en = "Twitter." }
