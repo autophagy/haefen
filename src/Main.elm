@@ -84,7 +84,7 @@ work =
 
 contact : { text1 : I18n, email : I18n, text2 : I18n, twitter : I18n }
 contact =
-    { text1 = { en = "Currently looking for new opportunities, especially with a functional programming focus. Contact me via " }
+    { text1 = { en = "Contact me via " }
     , email = { en = "email" }
     , text2 = { en = " or on " }
     , twitter = { en = "Twitter." }
