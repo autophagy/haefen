@@ -60,7 +60,7 @@ html {
     font-family: 'Bitter', serif;
     color: white;
     background-color: #1e3b3c;
-    background-image: url('/index.gif');
+    background-image: url('../public/index.gif');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
