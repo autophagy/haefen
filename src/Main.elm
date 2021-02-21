@@ -2,35 +2,24 @@ module Main exposing (..)
 
 import Browser
 import Html exposing (Html, a, div, p, span, text)
-import Html.Attributes exposing (href, id)
+import Html.Attributes exposing (class, href, id)
 
 
 
 ---- MODEL ----
 
 
-type Language
-    = EN
-
-
 type alias Model =
-    Language
+    {}
 
 
-type alias I18n =
-    { en : String }
+type alias Link =
+    { dest : String, desc : String }
 
 
 init : ( Model, Cmd Msg )
 init =
-    ( EN, Cmd.none )
-
-
-translate : Language -> I18n -> String
-translate language i18n =
-    case language of
-        EN ->
-            i18n.en
+    ( {}, Cmd.none )
 
 
 
@@ -50,76 +39,55 @@ update _ model =
 ---- VIEW ----
 
 
-greeting : I18n
-greeting =
-    { en = "Hi. I'm Mika." }
+name : String
+name =
+    "Mika Naylor"
 
 
-intro : I18n
-intro =
-    { en = """
-    I'm a Berlin based software developer, mostly writing Python. Though,
-    secretly, I really like type systems and functional programming with
-    Haskell/Elm.
-    """ }
+langs : List String
+langs =
+    [ "Python", "Haskell", "Elm" ]
 
 
-orga : { text1 : I18n, pyladies : I18n, text2 : I18n, pyconuk : I18n }
-orga =
-    { text1 = { en = "I help organise " }
-    , pyladies = { en = "Pyladies Berlin" }
-    , text2 = { en = " and do public speaking at events like " }
-    , pyconuk = { en = "PyCon UK." }
-    }
+likes : List String
+likes =
+    [ "Pure FP", "Type Systems", "Black Metal" ]
 
 
-work : { text1 : I18n, hraew : I18n, text2 : I18n, github : I18n }
+work : String
 work =
-    { text1 = { en = "Find my work in " }
-    , hraew = { en = "Hrǽw" }
-    , text2 = { en = " or on " }
-    , github = { en = "Github." }
-    }
+    "Ververica GmbH"
 
 
-contact : { text1 : I18n, email : I18n, text2 : I18n, twitter : I18n }
+contact : List Link
 contact =
-    { text1 = { en = "Contact me via " }
-    , email = { en = "email" }
-    , text2 = { en = " or on " }
-    , twitter = { en = "Twitter." }
-    }
+    [ { dest = "mailto:eala@autophagy.io", desc = "email" }
+    , { dest = "https://github.com/autophagy", desc = "github" }
+    , { dest = "https://twitter.com/autophagian", desc = "twitter" }
+    ]
 
 
 view : Model -> Html Msg
-view language =
+view _ =
     let
-        i18n =
-            translate language >> text
+        showList =
+            String.join " | "
+
+        showLink =
+            \l -> a [ href l.dest ] [ text l.desc ]
+
+        showLinkList =
+            List.intersperse (text " | ") << List.map showLink
+
+        row =
+            \n content -> div [ class "row" ] ([ span [ class "ident" ] [ text n ], span [ class "sep" ] [ text " :: " ] ] ++ content)
     in
     div [ id "text" ]
-        [ div [ id "title" ] [ span [ id "name" ] [ i18n greeting ] ]
-        , div [ id "content" ]
-            [ p [] [ i18n intro ]
-            , p []
-                [ i18n orga.text1
-                , a [ href "https://berlin.pyladies.com/" ] [ i18n orga.pyladies ]
-                , i18n orga.text2
-                , a [ href "https://www.youtube.com/watch?v=qLoMFu14wmk" ] [ i18n orga.pyconuk ]
-                ]
-            , p []
-                [ i18n work.text1
-                , a [ href "https://hraew.autophagy.io/" ] [ i18n work.hraew ]
-                , i18n work.text2
-                , a [ href "https://github.com/autophagy/" ] [ i18n work.github ]
-                ]
-            , p []
-                [ i18n contact.text1
-                , a [ href "mailto:eala@autophagy.io" ] [ i18n contact.email ]
-                , i18n contact.text2
-                , a [ href "https://twitter.com/autophagian" ] [ i18n contact.twitter ]
-                ]
-            ]
+        [ row "name" [ text name ]
+        , row "langs" [ text <| showList langs ]
+        , row "likes" [ text <| showList likes ]
+        , row "work" [ text work ]
+        , row "contact" <| showLinkList contact
         ]
 
 

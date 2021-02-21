@@ -57,49 +57,34 @@ table {
 
 
 html {
-    font-family: 'Bitter', serif;
+    font-family: 'IBM Plex Mono', monospace;
     color: white;
     background-color: #1e3b3c;
     background-image: url('../public/index.gif');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    font-size: 20px;
+    font-size: 16px;
     display: flex;
-    align-items: center;
     height: 100%;
     width: 100%;
-    justify-content: space-around;
 }
 
 #text {
-    max-width: 30em;
-    margin-left: auto;
-    margin-right: auto;
     line-height: 1.5;
-    padding: 1em;
+    padding: 1.5em;
+    background-color: black;
+    margin: 1.5em;
 }
 
-#name {
-    margin-right: 0.4em;
+.ident {
+  width: 69px;
+  display: inline-block;
 }
 
-@keyframes slide {
-    0%{
-      background-position: 0 0;
-    }
-    100%{
-      background-position: 98px 0;
-    }
-}
-
-#title {
-    font-size: 3em;
-    line-height: 1em;
-}
-
-p {
-    margin: 20px 0;
+.sep {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
 }
 
 a {
@@ -112,4 +97,19 @@ a {
 
 a:hover {
     padding-bottom: 2px;
+}
+
+@media only screen and (max-width: 620px) {
+
+  html {
+    text-align: center;
+  }
+
+  .ident, .sep {
+    display: none;
+  }
+
+  .row {
+    margin-bottom: 1em;
+  }
 }
