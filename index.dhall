@@ -1,6 +1,6 @@
 let Template = ./template.dhall
-let Content = Template.Content
 
+let Content = Template.Content
 
 let name = { ident = "name", content = Content.Bare "Mika Naylor" }
 
@@ -28,4 +28,4 @@ let contact =
 
 let rows = [ name, langs, likes, work, contact ]
 
-in Template.render rows
+in  Template.render rows

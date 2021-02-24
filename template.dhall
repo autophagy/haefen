@@ -33,26 +33,28 @@ let renderRow
         ''
 
 let render
-    : List Row -> Text
-    = \(rows : List Row) -> ''
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="theme-color" content="#000000">
-        <link rel="shortcut icon" href="favicon.ico">
-        <link rel="stylesheet" href="main.css">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
-        <title>Mika Naylor</title>
-    </head>
-    <body>
-        <div id="text">
-            ${Prelude.Text.concatMapSep "\n" Row renderRow rows}
-        </div>
-    </body>
-    </html>
-    ''
-in { Content = Content, Row = Row, render = render }
+    : List Row → Text
+    = λ(rows : List Row) →
+        ''
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="utf-8">
+            <meta http-equiv="x-ua-compatible" content="ie=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="theme-color" content="#000000">
+            <link rel="shortcut icon" href="favicon.ico">
+            <link rel="stylesheet" href="main.css">
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+            <title>Mika Naylor</title>
+        </head>
+        <body>
+            <div id="text">
+                ${Prelude.Text.concatMapSep "\n" Row renderRow rows}
+            </div>
+        </body>
+        </html>
+        ''
+
+in  { Content, Row, render }
