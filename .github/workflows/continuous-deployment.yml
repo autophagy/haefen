@@ -13,11 +13,10 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-central-1
-      - name: Use Node 15.x
-        uses: actions/setup-node@v1
+      - name: Setup Dhall
+        uses: dhall-lang/setup-dhall@v4
         with:
-          node-version: 15.x
-      - run: npm install --silent -g create-elm-app@5.22.0
-      - run: elm-app build
+          version: '20.0.0'
+        run: dhall text --file index.dhall > index.html
       - name: Deploy to S3
-        run: aws s3 sync ./build/ s3://autophagy.io --delete
+        run: aws s3 sync index.html s3://autophagy.io --delete
