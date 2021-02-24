@@ -16,7 +16,8 @@ jobs:
       - name: Setup Dhall
         uses: dhall-lang/setup-dhall@v4
         with:
-          version: '20.0.0'
+          version: '1.38.0'
+      - name: Compile dhall -> html
         run: dhall text --file index.dhall > index.html
       - name: Deploy to S3
-        run: aws s3 sync index.html s3://autophagy.io --delete
+        run: aws s3 sync . s3://autophagy.io --delete --exclude "*" --include "index.gif" --include "index.html" --include "main.css" --include "favicon.ico"
