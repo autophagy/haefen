@@ -26,6 +26,4 @@ let contact =
             ]
       }
 
-let rows = [ name, langs, likes, work, contact ]
-
-in  Template.render rows
+in  Template.render [ name, langs, likes, work, contact ]
