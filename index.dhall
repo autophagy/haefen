@@ -26,4 +26,30 @@ let contact =
             ]
       }
 
-in  Template.render [ name, langs, likes, work, contact ]
+let mainSection = [ name, langs, likes, work, contact ]
+
+let talksSection =
+      [ { ident = "2020.04.17"
+        , content =
+            Content.Link
+              { src = "https://youtu.be/bO4qyBufcfQ?t=2356"
+              , desc = "Functional-ish Python"
+              }
+        }
+      , { ident = "2020.11.19"
+        , content =
+            Content.Link
+              { src = "https://www.meetup.com/PyLadies-Berlin/events/264674547/"
+              , desc = "Developers X Operations Workshop"
+              }
+        }
+      , { ident = "2019.07.14"
+        , content =
+            Content.Link
+              { src = "https://www.youtube.com/watch?v=qLoMFu14wmk"
+              , desc = "Code Styles Aren't Black And White"
+              }
+        }
+      ]
+
+in  Template.render [ mainSection, talksSection ]

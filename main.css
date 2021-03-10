@@ -59,7 +59,7 @@ html {
     width: 100%;
 }
 
-#text {
+.section {
     line-height: 1.5;
     padding: 1.5em;
     background-color: black;
@@ -67,7 +67,7 @@ html {
 }
 
 .ident {
-  width: 69px;
+  width: 90px;
   display: inline-block;
 }
 

@@ -3,15 +3,27 @@ let Prelude =
 
 let Link = { src : Text, desc : Text }
 
-let Content = < Bare : Text | BareList : List Text | LinkList : List Link >
+let Content =
+      < Bare : Text
+      | Link : Link
+      | BareList : List Text
+      | LinkList : List Link
+      >
 
 let Row = { ident : Text, content : Content }
+
+let Section = List Row
+
+let renderLink
+    : Link → Text
+    = λ(link : Link) → "<a href=${link.src}>${link.desc}</a>"
 
 let renderContent
     : Content → Text
     = λ(contentType : Content) →
         merge
           { Bare = λ(c : Text) → c
+          , Link = renderLink
           , BareList = Prelude.Text.concatSep " | "
           , LinkList =
               Prelude.Text.concatMapSep
@@ -32,9 +44,18 @@ let renderRow
         </div>
         ''
 
+let renderSection
+    : Section → Text
+    = λ(section : Section) →
+        ''
+        <div class="section">
+            ${Prelude.Text.concatMapSep "\n" Row renderRow section}
+        </div>
+        ''
+
 let render
-    : List Row → Text
-    = λ(rows : List Row) →
+    : List Section → Text
+    = λ(sections : List Section) →
         ''
         <!DOCTYPE html>
         <html lang="en">
@@ -51,7 +72,7 @@ let render
         </head>
         <body>
             <div id="text">
-                ${Prelude.Text.concatMapSep "\n" Row renderRow rows}
+                ${Prelude.Text.concatMapSep "\n" Section renderSection sections}
             </div>
         </body>
         </html>
