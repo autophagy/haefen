@@ -2,19 +2,19 @@ let Template = ./template.dhall
 
 let Content = Template.Content
 
-let name = { ident = "name", content = Content.Bare "Mika Naylor" }
+let name = { ident = "name", content = Content.Text "Mika Naylor" }
 
 let langs =
       { ident = "langs"
-      , content = Content.BareList [ "Python", "Haskell", "Elm" ]
+      , content = Content.TextList [ "Python", "Haskell", "Elm" ]
       }
 
 let likes =
       { ident = "likes"
-      , content = Content.BareList [ "Pure FP", "Type Systems", "Black Metal" ]
+      , content = Content.TextList [ "Pure FP", "Type Systems", "Black Metal" ]
       }
 
-let work = { ident = "work", content = Content.Bare "Ververica GmbH" }
+let work = { ident = "work", content = Content.Text "Ververica GmbH" }
 
 let contact =
       { ident = "contact"

@@ -4,9 +4,9 @@ let Prelude =
 let Link = { src : Text, desc : Text }
 
 let Content =
-      < Bare : Text
+      < Text : Text
       | Link : Link
-      | BareList : List Text
+      | TextList : List Text
       | LinkList : List Link
       >
 
@@ -22,9 +22,9 @@ let renderContent
     : Content → Text
     = λ(contentType : Content) →
         merge
-          { Bare = λ(c : Text) → c
+          { Text = λ(c : Text) → c
           , Link = renderLink
-          , BareList = Prelude.Text.concatSep " | "
+          , TextList = Prelude.Text.concatSep " | "
           , LinkList =
               Prelude.Text.concatMapSep
                 " | "
