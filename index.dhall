@@ -10,7 +10,6 @@ let mainSection =
       , { ident = "likes"
         , content = C.TextList [ "Pure FP", "Type Systems", "Black Metal" ]
         }
-      , { ident = "work", content = C.Text "Ververica GmbH" }
       , { ident = "contact"
         , content =
             C.LinkList
