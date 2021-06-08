@@ -4,7 +4,9 @@ let C = Template.Content
 
 let mainSection =
       [ { ident = "name", content = C.Text "Mika Naylor" }
-      , { ident = "langs", content = C.TextList [ "Python", "Haskell", "Dhall" ] }
+      , { ident = "langs"
+        ,content = C.TextList [ "Python", "Haskell", "Elm", "Dhall" ]
+        }
       , { ident = "likes"
         , content = C.TextList [ "Pure FP", "Type Systems", "Black Metal" ]
         }
