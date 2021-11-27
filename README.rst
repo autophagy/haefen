@@ -7,4 +7,4 @@ as a Dhall -> Static HTML template thingy, for no particular reason.
 
 To build::
 
-  $ dhall text --file index.dhall
+  $ nix-build
