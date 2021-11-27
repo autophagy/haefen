@@ -7,17 +7,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Configure AWS
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: eu-central-1
       - name: Setup Dhall
         uses: dhall-lang/setup-dhall@v4
         with:
           version: '1.38.0'
       - name: Compile dhall -> html
-        run: dhall text --file index.dhall > index.html
-      - name: Deploy to S3
-        run: aws s3 sync . s3://autophagy.io --delete --exclude "*" --include "index.gif" --include "index.html" --include "main.css" --include "favicon.ico"
+        run: |
+          mkdir -p out
+          dhall text --file index.dhall --output out/index.html
+          cp main.css index.gif favicon.ico out
+      - name: Deploy to Github Pages
+        uses: JamesIves/github-pages-deploy-action@4.1.6
+        if: ${{ github.ref == 'refs/heads/master' }}
+        with:
+          branch: gh-pages
+          folder: out
+          clean: true
+          clean-exclude: |
+            CNAME
