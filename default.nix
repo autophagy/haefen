@@ -11,8 +11,8 @@ let
   preludeSrc = pkgs.fetchFromGitHub {
     owner = "dhall-lang";
     repo = "dhall-lang";
-    rev = "v17.0.0";
-    sha256 = "0jnqw50q26ksxkzs85a2svyhwd2cy858xhncq945bmirpqrhklwf";
+    rev = "v20.0.0";
+    sha256 = "sha256-inKajh4BoqnwlHp5c3w2tKlc0H5Dg3s7EZKFOPsps+o=";
   };
 
   inherit (import gitignoreSrc { inherit (pkgs) lib; }) gitignoreSource;
