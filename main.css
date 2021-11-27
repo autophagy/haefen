@@ -1,0 +1,104 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+
+
+html {
+    font-family: 'IBM Plex Mono', monospace;
+    color: white;
+    background-color: #1e3b3c;
+    background-image: url('index.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-size: 16px;
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.section {
+    line-height: 1.5;
+    padding: 1.5em;
+    background-color: black;
+    margin: 1.5em;
+}
+
+.ident {
+  width: 90px;
+  display: inline-block;
+}
+
+.sep {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+a {
+    color: white;
+    border-bottom: 1px dashed white;
+    padding-bottom: 0px;
+    text-decoration: none;
+    transition: padding 0.25s;
+}
+
+a:hover {
+    padding-bottom: 2px;
+}
+
+@media only screen and (max-width: 620px) {
+
+  html {
+    text-align: center;
+  }
+
+  .ident, .sep {
+    display: none;
+  }
+
+  .row {
+    margin-bottom: 1em;
+  }
+}
