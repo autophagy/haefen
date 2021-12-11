@@ -5,10 +5,10 @@ let C = Template.Content
 let mainSection =
       [ { ident = "name", content = C.Text "Mika Naylor" }
       , { ident = "langs"
-        ,content = C.TextList [ "Python", "Haskell", "Elm", "Dhall" ]
+        ,content = C.TextList [ "Python", "Haskell", "Elm", "Nix" ]
         }
       , { ident = "likes"
-        , content = C.TextList [ "Pure FP", "Type Systems", "Black Metal" ]
+        , content = C.TextList [ "Algebriac Data Types", "Lazy Evaluation", "Black Metal" ]
         }
       , { ident = "contact"
         , content =
