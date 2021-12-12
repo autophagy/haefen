@@ -21,7 +21,14 @@ let mainSection =
       ]
 
 let talksSection =
-      [ { ident = "2020.04.17"
+      [ { ident = "2021.12.11"
+        , content =
+            C.Link
+              { src = "https://youtu.be/hXKdtY8gHbs?t=7850"
+              , desc = "Behind The Lambda"
+              }
+        }
+      , { ident = "2020.04.17"
         , content =
             C.Link
               { src = "https://youtu.be/bO4qyBufcfQ?t=2356"
