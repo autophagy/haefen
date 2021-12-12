@@ -8,7 +8,7 @@ let mainSection =
         ,content = C.TextList [ "Python", "Haskell", "Elm", "Nix" ]
         }
       , { ident = "likes"
-        , content = C.TextList [ "Algebriac Data Types", "Lazy Evaluation", "Black Metal" ]
+        , content = C.TextList [ "Algebriac Data Types", "Black Metal" ]
         }
       , { ident = "contact"
         , content =
