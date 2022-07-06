@@ -1,0 +1,60 @@
+{
+  "nodes": {
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1657020478,
+        "narHash": "sha256-sU5hXEGcOcvz2xoPAuNLBQJLXjwvPpTkoddyXE8gw20=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "71a4f0dc3d80ba76f437c888c1c3d59f1df98163",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "ref": "nixos-unstable",
+        "type": "indirect"
+      }
+    },
+    "preludeSrc": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1606925772,
+        "narHash": "sha256-inKajh4BoqnwlHp5c3w2tKlc0H5Dg3s7EZKFOPsps+o=",
+        "owner": "dhall-lang",
+        "repo": "dhall-lang",
+        "rev": "2f7d0c28ab96181a003a284a0a68ba5debb2a751",
+        "type": "github"
+      },
+      "original": {
+        "owner": "dhall-lang",
+        "ref": "v20.0.0",
+        "repo": "dhall-lang",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "nixpkgs": "nixpkgs",
+        "preludeSrc": "preludeSrc",
+        "utils": "utils"
+      }
+    },
+    "utils": {
+      "locked": {
+        "lastModified": 1656928814,
+        "narHash": "sha256-RIFfgBuKz6Hp89yRr7+NR5tzIAbn52h8vT6vXkYjZoM=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "7e2a3b3dfd9af950a856d66b0a7d01e3c18aa249",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

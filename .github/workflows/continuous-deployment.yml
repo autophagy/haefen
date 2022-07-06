@@ -1,5 +1,8 @@
 name: Continuous Deployment
-on: push
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   deploy:
@@ -7,12 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: cachix/install-nix-action@v14.1
+      - uses: cachix/install-nix-action@v17
       - name: Nix Build
-        run: nix-build
+        run: nix build
       - name: Deploy to Github Pages
         uses: JamesIves/github-pages-deploy-action@4.1.6
-        if: ${{ github.ref == 'refs/heads/master' }}
         with:
           branch: gh-pages
           folder: result
