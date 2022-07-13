@@ -21,7 +21,14 @@ let mainSection =
       ]
 
 let talksSection =
-      [ { ident = "2021.12.11"
+      [ { ident = "2022.10.06"
+        , content =
+            C.Link
+              { src = "https://www.youtube.com/watch?v=Kk9Ad1DAzKU"
+              , desc = "Leading Beyond Tools, Process & Structure"
+              }
+        }
+       , { ident = "2021.12.11"
         , content =
             C.Link
               { src = "https://youtu.be/hXKdtY8gHbs?t=7850"
