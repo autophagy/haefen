@@ -25,6 +25,9 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
   line-height: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 ol, ul {
   list-style: none;
