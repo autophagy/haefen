@@ -104,4 +104,8 @@ a:hover {
   .row {
     margin-bottom: 1em;
   }
+
+  footer {
+      display: none;
+  }
 }
