@@ -5,11 +5,9 @@ let C = Template.Content
 let mainSection =
       [ { ident = "name", content = C.Text "Mika Naylor" }
       , { ident = "langs"
-        ,content = C.TextList [ "Python", "Haskell", "Elm", "Nix" ]
+        ,content = C.TextList [ "Nix", "Rust", "Python", "Haskell", "Elm" ]
         }
-      , { ident = "likes"
-        , content = C.TextList [ "Algebriac Data Types", "Black Metal" ]
-        }
+      , { ident = "work", content = C.Link { src = "https://immerok.com", desc = "immerok" } }
       , { ident = "contact"
         , content =
             C.LinkList
