@@ -77,7 +77,7 @@ let render
             <div id="text">
                 ${Prelude.Text.concatMapSep "\n" Section renderSection sections}
             </div>
-            <footer class="section">${drv}</footer>
+            <footer class="section"><a href="https://github.com/autophagy/haefen">${drv}</a></footer>
         </body>
         </html>
         ''
