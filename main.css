@@ -93,7 +93,7 @@ a:hover {
 }
 
 footer {
-    wordwrap: anywhere;
+    word-wrap: anywhere;
 }
 
 @media only screen and (max-width: 620px) {
