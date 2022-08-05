@@ -5,9 +5,11 @@ let C = Template.Content
 let mainSection =
       [ { ident = "name", content = C.Text "Mika Naylor" }
       , { ident = "langs"
-        ,content = C.TextList [ "Nix", "Rust", "Python", "Haskell", "Elm" ]
+        , content = C.TextList [ "Nix", "Rust", "Python", "Haskell", "Elm" ]
         }
-      , { ident = "work", content = C.Link { src = "https://immerok.com", desc = "immerok" } }
+      , { ident = "work"
+        , content = C.Link { src = "https://immerok.com", desc = "immerok" }
+        }
       , { ident = "contact"
         , content =
             C.LinkList
@@ -15,6 +17,44 @@ let mainSection =
               , { src = "https://github.com/autophagy", desc = "github" }
               , { src = "https://twitter.com/autophagian", desc = "twitter" }
               ]
+        }
+      ]
+
+let projectsSection =
+      [ { ident = "wordhord"
+        , content =
+            C.Link
+              { src = "https://wordhord.autophagy.io"
+              , desc = "blog & tiny static site generator"
+              }
+        }
+      , { ident = "antimber"
+        , content =
+            C.Link
+              { src = "https://github.com/autophagy/antimber"
+              , desc = "nixOS & homemanager configuration"
+              }
+        }
+      , { ident = "færeld"
+        , content =
+            C.Link
+              { src = "https://github.com/autophagy/faereld"
+              , desc = "cli time tracking tool"
+              }
+        }
+      , { ident = "insegel"
+        , content =
+            C.Link
+              { src = "https://github.com/autophagy/insegel"
+              , desc = "sphinx theme"
+              }
+        }
+      , { ident = "scieldas"
+        , content =
+            C.Link
+              { src = "https://scieldas.autophagy.io"
+              , desc = "metadata badges for open source projects"
+              }
         }
       ]
 
@@ -26,7 +66,7 @@ let talksSection =
               , desc = "Leading Beyond Tools, Process & Structure"
               }
         }
-       , { ident = "2021.12.11"
+      , { ident = "2021.12.11"
         , content =
             C.Link
               { src = "https://youtu.be/hXKdtY8gHbs?t=7850"
@@ -56,4 +96,4 @@ let talksSection =
         }
       ]
 
-in  Template.render [ mainSection, talksSection ]
+in  Template.render [ mainSection, projectsSection, talksSection ]
