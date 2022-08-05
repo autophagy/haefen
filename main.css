@@ -56,6 +56,7 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     font-size: 16px;
     display: flex;
     height: 100%;
@@ -91,6 +92,10 @@ a:hover {
     padding-bottom: 2px;
 }
 
+footer {
+    wordwrap: anywhere;
+}
+
 @media only screen and (max-width: 620px) {
 
   html {
@@ -103,9 +108,5 @@ a:hover {
 
   .row {
     margin-bottom: 1em;
-  }
-
-  footer {
-      display: none;
   }
 }
