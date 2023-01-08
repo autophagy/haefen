@@ -7,9 +7,6 @@ let mainSection =
       , { ident = "langs"
         , content = C.TextList [ "Nix", "Rust", "Python", "Haskell", "Elm" ]
         }
-      , { ident = "work"
-        , content = C.Link { src = "https://immerok.com", desc = "immerok" }
-        }
       , { ident = "contact"
         , content =
             C.LinkList
