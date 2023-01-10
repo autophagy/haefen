@@ -7,6 +7,9 @@ let mainSection =
       , { ident = "langs"
         , content = C.TextList [ "Nix", "Rust", "Python", "Haskell", "Elm" ]
         }
+      , { ident = "work"
+        , content = C.Link { src = "https://confluent.io", desc = "confluent" }
+        }
       , { ident = "contact"
         , content =
             C.LinkList
