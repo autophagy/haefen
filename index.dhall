@@ -18,6 +18,9 @@ let mainSection =
               , { src = "https://hordburh.autophagy.io/@mika", desc = "fediverse" }
               ]
         }
+      , { ident = "pgp"
+        , content = C.Link { src = "/gpg.pub", desc = "9B0A 46AC C6F6 E9FB" }
+        }
       ]
 
 let projectsSection =

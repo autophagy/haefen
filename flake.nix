@@ -37,6 +37,7 @@
             cp -rf favicon.ico $out
             cp -rf index.html $out
             cp -rf keybase.txt $out
+            cp -rf gpg.pub $out
           '';
         };
 
