@@ -63,7 +63,14 @@ let projectsSection =
       ]
 
 let talksSection =
-      [ { ident = "2022.10.06"
+      [ { ident = "2025.04.23"
+        , content =
+            C.Link
+              { src = "https://2025.pycon.de/talks/UH7FXA/"
+              , desc = "Instrumenting Python Applications with OpenTelemetry"
+              }
+        }
+      , { ident = "2022.10.06"
         , content =
             C.Link
               { src = "https://www.youtube.com/watch?v=Kk9Ad1DAzKU"
