@@ -5,7 +5,7 @@ let C = Template.Content
 let mainSection =
       [ { ident = "name", content = C.Text "Mika Naylor" }
       , { ident = "langs"
-        , content = C.TextList [ "Nix", "Rust", "Python", "Haskell", "Elm" ]
+        , content = C.TextList [ "Nix", "Rust", "Python" ]
         }
       , { ident = "work"
         , content = C.Link { src = "https://confluent.io", desc = "confluent" }
