@@ -24,44 +24,6 @@ let mainSection =
         }
       ]
 
-let projectsSection =
-      [ { ident = "wordhord"
-        , content =
-            C.Link
-              { src = "https://wordhord.autophagy.io"
-              , desc = "blog & tiny static site generator"
-              }
-        }
-      , { ident = "antimber"
-        , content =
-            C.Link
-              { src = "https://github.com/autophagy/antimber"
-              , desc = "nixOS & homemanager configuration"
-              }
-        }
-      , { ident = "færeld"
-        , content =
-            C.Link
-              { src = "https://github.com/autophagy/faereld"
-              , desc = "cli time tracking tool"
-              }
-        }
-      , { ident = "insegel"
-        , content =
-            C.Link
-              { src = "https://github.com/autophagy/insegel"
-              , desc = "sphinx theme"
-              }
-        }
-      , { ident = "scieldas"
-        , content =
-            C.Link
-              { src = "https://scieldas.autophagy.io"
-              , desc = "metadata badges for open source projects"
-              }
-        }
-      ]
-
 let talksSection =
       [ { ident = "2025.04.23"
         , content =
@@ -107,4 +69,4 @@ let talksSection =
         }
       ]
 
-in  Template.render [ mainSection, projectsSection, talksSection ]
+in  Template.render [ mainSection, talksSection ]
