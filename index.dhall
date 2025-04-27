@@ -15,8 +15,6 @@ let mainSection =
             C.LinkList
               [ { src = "mailto:eala@autophagy.io", desc = "email" }
               , { src = "https://github.com/autophagy", desc = "github" }
-              , { src = "https://hordburh.autophagy.io/@mika", desc = "fediverse" }
-              , { src = "https://bsky.app/profile/autophagy.io", desc = "bluesky" }
               ]
         }
       , { ident = "pgp"
