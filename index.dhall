@@ -8,7 +8,11 @@ let mainSection =
         , content = C.TextList [ "Nix", "Rust", "Python" ]
         }
       , { ident = "work"
-        , content = C.Link { src = "https://confluent.io", desc = "confluent" }
+        , content =
+            C.LinkList
+              [ { src = "https://wyrhtaceramics.com/", desc = "wyrhta ceramics" }
+              , { src = "https://confluent.io", desc = "confluent" }
+              ]
         }
       , { ident = "contact"
         , content =
