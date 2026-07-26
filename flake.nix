@@ -38,6 +38,7 @@
             cp -rf index.html $out
             cp -rf keybase.txt $out
             cp -rf gpg.pub $out
+            cp -rf becoming.js $out
           '';
         };
 
