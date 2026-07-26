@@ -19,6 +19,7 @@ let mainSection =
             C.LinkList
               [ { src = "mailto:eala@autophagy.io", desc = "email" }
               , { src = "https://github.com/autophagy", desc = "github" }
+              , { src = "https://tangled.org/autophagy.io", desc = "tangled" }
               ]
         }
       , { ident = "pgp"
@@ -48,13 +49,6 @@ let talksSection =
               , desc = "Behind The Lambda"
               }
         }
-      , { ident = "2020.04.17"
-        , content =
-            C.Link
-              { src = "https://youtu.be/bO4qyBufcfQ?t=2356"
-              , desc = "Functional-ish Python"
-              }
-        }
       , { ident = "2020.11.19"
         , content =
             C.Link
@@ -67,6 +61,13 @@ let talksSection =
             C.Link
               { src = "https://www.youtube.com/watch?v=qLoMFu14wmk"
               , desc = "Code Styles Aren't Black And White"
+              }
+        }
+      , { ident = "2020.04.17"
+        , content =
+            C.Link
+              { src = "https://youtu.be/bO4qyBufcfQ?t=2356"
+              , desc = "Functional-ish Python"
               }
         }
       ]
