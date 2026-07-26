@@ -13,7 +13,7 @@
 
 *{ box-sizing:border-box; }
 html,body{ margin:0; }
-html{ background-color:#e8dabb; }
+html{ background-color:#e8dabb; -webkit-text-size-adjust:100%; }
 body{
   background:transparent;
   color:var(--ink);
@@ -93,5 +93,19 @@ a:focus-visible{ outline:1px dashed var(--folium); outline-offset:3px; }
 .colophon a:hover{ color:var(--folium); border-bottom-color:var(--folium); }
 
 @media (max-width:520px){
+  body{ padding:36px 18px 48px; }
   .namemark{ font-size:1.5rem; }
+
+  .writing{
+    grid-template-columns:1fr;
+    row-gap:0;
+  }
+  .writing .d{ display:none; }
+  .writing .date{
+    font-size:.72rem;
+    letter-spacing:.1em;
+    line-height:1.4;
+  }
+  .writing .v{ margin-bottom:20px; }
+  .writing .v:last-of-type{ margin-bottom:0; }
 }
