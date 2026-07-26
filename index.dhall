@@ -3,14 +3,13 @@ let Template = ./template.dhall
 let C = Template.Content
 
 let mainSection =
-      [ { ident = "name", content = C.Text "Mika Naylor" }
-      , { ident = "langs"
-        , content = C.TextList [ "Nix", "Rust", "Python" ]
-        }
+      [ { ident = "langs", content = C.TextList [ "Nix", "Rust", "Python" ] }
       , { ident = "work"
         , content =
             C.LinkList
-              [ { src = "https://wyrhtaceramics.com/", desc = "wyrhta ceramics" }
+              [ { src = "https://wyrhtaceramics.com/"
+                , desc = "wyrhta ceramics"
+                }
               , { src = "https://confluent.io", desc = "confluent" }
               ]
         }
@@ -72,4 +71,4 @@ let talksSection =
         }
       ]
 
-in  Template.render [ mainSection, talksSection ]
+in  Template.render mainSection talksSection

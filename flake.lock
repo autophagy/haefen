@@ -2,12 +2,11 @@
   "nodes": {
     "nixpkgs": {
       "locked": {
-        "lastModified": 1657020478,
-        "narHash": "sha256-sU5hXEGcOcvz2xoPAuNLBQJLXjwvPpTkoddyXE8gw20=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "71a4f0dc3d80ba76f437c888c1c3d59f1df98163",
-        "type": "github"
+        "lastModified": 315532800,
+        "narHash": "sha256-vwxWgF+Gj276WznzGb1LxGsK/39HaQwgQXiU3EkC844=",
+        "rev": "e2587caef70cea85dd97d7daab492899902dbf5d",
+        "type": "tarball",
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1040357.e2587caef70c/nixexprs.tar.xz?lastModified=1784796856"
       },
       "original": {
         "id": "nixpkgs",
@@ -18,16 +17,16 @@
     "preludeSrc": {
       "flake": false,
       "locked": {
-        "lastModified": 1606925772,
-        "narHash": "sha256-inKajh4BoqnwlHp5c3w2tKlc0H5Dg3s7EZKFOPsps+o=",
+        "lastModified": 1736998142,
+        "narHash": "sha256-7zIbHwpOoQURbqfSgnLg0AGTJAKLiKRyay/TIhs7fW4=",
         "owner": "dhall-lang",
         "repo": "dhall-lang",
-        "rev": "2f7d0c28ab96181a003a284a0a68ba5debb2a751",
+        "rev": "932a4db57ed1a6de36773077ba21e7f85bc0b20d",
         "type": "github"
       },
       "original": {
         "owner": "dhall-lang",
-        "ref": "v20.0.0",
+        "ref": "v23.1.0",
         "repo": "dhall-lang",
         "type": "github"
       }
@@ -39,13 +38,31 @@
         "utils": "utils"
       }
     },
-    "utils": {
+    "systems": {
       "locked": {
-        "lastModified": 1656928814,
-        "narHash": "sha256-RIFfgBuKz6Hp89yRr7+NR5tzIAbn52h8vT6vXkYjZoM=",
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "utils": {
+      "inputs": {
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "7e2a3b3dfd9af950a856d66b0a7d01e3c18aa249",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
         "type": "github"
       },
       "original": {

@@ -1,112 +1,97 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-body {
-  line-height: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-ol, ul {
-  list-style: none;
-}
-blockquote, q {
-  quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+:root{
+  color-scheme: only light;
+  --parchment:#e8dabb;
+  --ink:#38291d;
+  --soft:#6f5a43;
+  --folium:#6b4a86;
+  --rule:#d3c09a;
+  --visited:#665674;
+  --contour:186,163,120;
+  --contour-alpha:.55;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
 }
 
+*{ box-sizing:border-box; }
+html,body{ margin:0; }
+html{ background-color:#e8dabb; }
+body{
+  background:transparent;
+  color:var(--ink);
+  font-family:var(--mono);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  font-size:15px;
+  display:flex;
+  justify-content:center;
+  padding:44px 20px 60px;
+}
+#field{
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:-1;
+  pointer-events:none;
+}
+main{ width:100%; max-width:600px; }
 
-
-
-html {
-    font-family: 'IBM Plex Mono', monospace;
-    color: white;
-    background-color: #1e3b3c;
-    background-image: url('index.gif');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    font-size: 16px;
-    display: flex;
-    height: 100%;
-    width: 100%;
+.namemark{
+  margin:0 0 34px;
+  font-size:1.75rem;
+  line-height:1.1;
+  letter-spacing:.02em;
+  color:var(--folium);
 }
 
-.section {
-    line-height: 1.5;
-    padding: 1.5em;
-    background-color: black;
-    margin: 1.5em;
+.rows,.talks{
+  display:grid;
+  grid-template-columns:max-content max-content 1fr;
+  column-gap:1.1em;
+}
+.rows{ row-gap:2px; }
+.talks{ row-gap:9px; }
+.k,.date,.d{ color:var(--soft); }
+.v{ color:var(--ink); }
+
+hr{
+  border:none;
+  border-top:1px solid var(--rule);
+  margin:30px 0;
 }
 
-.ident {
-  width: 90px;
-  display: inline-block;
+.rubric{
+  color:var(--folium);
+  letter-spacing:.2em;
+  margin:0 0 16px;
 }
 
-.sep {
-  margin-left: 0.5em;
-  margin-right: 0.5em;
+a{
+  color:var(--ink);
+  text-decoration:none;
+  border-bottom:1px dotted var(--soft);
+  padding-bottom:1px;
+  transition:color .12s, border-color .12s;
 }
+a:visited{ color:var(--visited); border-bottom-color:var(--visited); }
+a:hover{ color:var(--folium); border-bottom-color:var(--folium); }
+a:focus-visible{ outline:1px dashed var(--folium); outline-offset:3px; }
+.sep{ color:var(--rule); padding:0 .5em; }
 
-a {
-    color: white;
-    border-bottom: 1px dashed white;
-    padding-bottom: 0px;
-    text-decoration: none;
-    transition: padding 0.25s;
+.colophon{
+  margin-top:40px;
+  padding-top:18px;
+  border-top:1px solid var(--rule);
+  font-size:.85rem;
+  color:var(--soft);
+  display:grid;
+  grid-template-columns:max-content max-content 1fr;
+  column-gap:1.1em;
 }
+.colophon .v{ color:var(--soft); overflow-wrap:anywhere; }
+.colophon a{ color:var(--soft); border-bottom-color:var(--rule); }
+.colophon a:visited{ color:var(--soft); }
+.colophon a:hover{ color:var(--folium); border-bottom-color:var(--folium); }
 
-a:hover {
-    padding-bottom: 2px;
-}
-
-footer {
-    word-wrap: anywhere;
-}
-
-@media only screen and (max-width: 620px) {
-
-  html {
-    text-align: center;
-  }
-
-  .ident, .sep {
-    display: none;
-  }
-
-  .row {
-    margin-bottom: 1em;
-  }
+@media (max-width:520px){
+  .namemark{ font-size:1.5rem; }
 }

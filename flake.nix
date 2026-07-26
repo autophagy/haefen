@@ -6,7 +6,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     preludeSrc = {
-      url = "github:dhall-lang/dhall-lang/v20.0.0";
+      url = "github:dhall-lang/dhall-lang/v23.1.0";
       flake = false;
     };
   };
