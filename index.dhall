@@ -3,7 +3,7 @@ let Template = ./template.dhall
 let C = Template.Content
 
 let mainSection =
-      [ { ident = "langs", content = C.TextList [ "Nix", "Rust", "Python" ] }
+      [ { ident = "sympathies", content = C.TextList [ "reproducible builds", "type systems", "riesling" ] }
       , { ident = "work"
         , content =
             C.LinkList
