@@ -1,10 +1,4 @@
-======
-Haefen
-======
+hæfen
+  noun: inlet, harbour, port
 
-A personal site, hosted at `autophagy.io <https://autophagy.io>`_. Over-engineered
-as a Dhall -> Static HTML template thingy, for no particular reason.
-
-To build::
-
-  $ nix-build
+every present state of a simple substance is a natural consequence of its preceding state, in such a way that its present is big with its future
