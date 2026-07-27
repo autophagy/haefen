@@ -97,12 +97,14 @@ let render
                     ${renderTalks talks}
 
                     <section class="colophon">
-                        <span class="v"><a href="https://github.com/autophagy/haefen">${drv}</a></span>
+                        <p class="v"><a href="https://github.com/autophagy/haefen">${drv}</a></p>
+                        <p id="mouth"></p>
                     </section>
                 </main>
 
                 <script>
                     become("${drv}", "field")
+                    speak("mouth")
                 </script>
             </body>
         </html>
