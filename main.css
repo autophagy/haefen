@@ -83,14 +83,22 @@ a:focus-visible{ outline:1px dashed var(--folium); outline-offset:3px; }
   border-top:1px solid var(--rule);
   font-size:.85rem;
   color:var(--soft);
-  display:grid;
-  grid-template-columns:max-content max-content 1fr;
-  column-gap:1.1em;
 }
+.colophon p{ margin:0 0 4px; }
+.colophon p:last-child{ margin-bottom:0; }
 .colophon .v{ color:var(--soft); overflow-wrap:anywhere; }
 .colophon a{ color:var(--soft); border-bottom-color:var(--rule); }
 .colophon a:visited{ color:var(--soft); }
 .colophon a:hover{ color:var(--folium); border-bottom-color:var(--folium); }
+
+.lacuna {
+  display: inline-block;
+  width: 10ch;
+  height: .85em;
+  vertical-align: baseline;
+  margin: 0 .2em;
+  background-color: var(--soft);
+}
 
 @media (max-width:520px){
   body{ padding:36px 18px 48px; }

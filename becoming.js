@@ -246,3 +246,50 @@ function become(derivation, canvasId) {
     resize();
     start();
 }
+
+function speak(spanId) {
+    const lines = [
+      "Wondrous is this stone-wall, wrecked by fate",
+      "the city-buildings crumble, the works of the giants decay",
+      "Roofs have caved in, towers collapsed,",
+      "barred gates are gaping, tottering and fallen,",
+      "undermined by age. The earth's embrace,",
+      "its fierce grip, holds the mighty craftsmen;",
+      "they are perished and gone. A hundred generations",
+      "have passed away since then. This wall, grey with lichen",
+      "and red of hue, outlives kingdom after kingdom,",
+      "withstands tempests; its tall gate succumbed",
+      "The city still moulders, gashed by storms",
+      "A man's mind quickened with a plan;",
+      "subtle and strong-willed, she bound",
+      "the foundation with metal rods - a marvel",
+      "Bright were the city halls, many the bath-houses,",
+      "lofty all the gables, great the martial clamour,",
+      "many a mead-hall was full of delights",
+      "until fate the mighty altered it. Slaughtered men",
+      "fell far and wide, the plague-days came,",
+      "death removed every brave man",
+      "Their ramparts became abandoned places,",
+      "the city decayed; warriors and builders",
+      "fell to the earth. Thus these courts crumble,",
+      "and this redstone arch sheds tiles",
+      "The place falls to ruin, shattered",
+      "into mounds of stone, where once many a man,",
+      "joyous and gold-bright, dressed in splendour,",
+      "proud and flushed with wine, gleamed in her armour;",
+      "she gazed on her treasure - silver, precious stones,",
+      "jewellery and wealth, all that he owned -",
+      "and on this bright city in the broad kingdom",
+      "Stone houses stood here; a hot spring",
+      "gushed in a wide stream; a stone wall",
+      "enclosed the bright interior; the baths",
+      "were there, the heated water; that was convenient",
+      "They allowed the scalding water to pour",
+      "over the grey stone into the circular pool. Hot <span class='lacuna'></span>",
+      "<span class='lacuna'></span> where the baths were",
+      "<span class='lacuna'></span> that is a noble thing,",
+      "how the <span class='lacuna'></span> the city"
+    ];
+
+    document.getElementById(spanId).innerHTML = lines[Math.floor(Math.random() * lines.length)];
+}
