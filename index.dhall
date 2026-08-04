@@ -2,8 +2,13 @@ let Template = ./template.dhall
 
 let C = Template.Content
 
+let identity = { name = "Mika Naylor", curse = "she/her" }
+
 let mainSection =
-      [ { ident = "sympathies", content = C.TextList [ "reproducible builds", "type systems", "riesling" ] }
+      [ { ident = "sympathies"
+        , content =
+            C.TextList [ "reproducible builds", "type systems", "riesling" ]
+        }
       , { ident = "work"
         , content =
             C.LinkList
@@ -68,4 +73,4 @@ let talksSection =
         }
       ]
 
-in  Template.render mainSection talksSection
+in  Template.render identity mainSection talksSection

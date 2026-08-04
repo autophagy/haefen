@@ -5,6 +5,8 @@ let Prelude =
 
 let drv = env:DRV as Text ? ""
 
+let Identity = { name : Text, curse : Text }
+
 let Link = { src : Text, desc : Text }
 
 let Content =
@@ -66,8 +68,9 @@ let renderTalks
         ''
 
 let render
-    : Section → Section → Text
-    = λ(main : Section) →
+    : Identity → Section → Section → Text
+    = λ(identity : Identity) →
+      λ(main : Section) →
       λ(talks : Section) →
         ''
             <!DOCTYPE html>
@@ -82,13 +85,16 @@ let render
                 <link rel="preconnect" href="https://fonts.gstatic.com">
                 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
                 <script src="becoming.js"></script>
-                <title>Mika Naylor</title>
+                <title>${identity.name}</title>
             </head>
             <body>
                 <canvas id="field" aria-hidden="true"></canvas>
 
                 <main>
-                    <p class="namemark">mika naylor</p>
+                    <p class="namemark">
+                        ${Prelude.Text.lowerASCII identity.name}
+                        <span id="curse">[${identity.curse}]</span>
+                    </p>
 
                     ${renderMain main}
 
