@@ -100,6 +100,11 @@ a:focus-visible{ outline:1px dashed var(--folium); outline-offset:3px; }
   background-color: var(--soft);
 }
 
+#curse {
+  font-size: 0.5em;
+  opacity: 0.6;
+}
+
 @media (max-width:520px){
   body{ padding:36px 18px 48px; }
   .namemark{ font-size:1.5rem; }
