@@ -9,7 +9,7 @@ let mainSection =
         , content =
             C.TextList [ "reproducible builds", "type systems", "riesling" ]
         }
-      , { ident = "work"
+      , { ident = "labour"
         , content =
             C.LinkList
               [ { src = "https://wyrhtaceramics.com/"
@@ -18,12 +18,18 @@ let mainSection =
               , { src = "https://confluent.io", desc = "confluent" }
               ]
         }
-      , { ident = "contact"
+      , { ident = "hoards"
+        , content =
+            C.LinkList
+              [ { src = "https://github.com/autophagy", desc = "github" }
+              , { src = "https://tangled.org/autophagy.io", desc = "tangled" }
+              ]
+        }
+      , { ident = "speech"
         , content =
             C.LinkList
               [ { src = "mailto:eala@autophagy.io", desc = "email" }
-              , { src = "https://github.com/autophagy", desc = "github" }
-              , { src = "https://tangled.org/autophagy.io", desc = "tangled" }
+              , { src = "https://mu.social/profile/autophagy.io", desc = "mu" }
               ]
         }
       ]
