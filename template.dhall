@@ -84,7 +84,11 @@ let render
                 <link rel="stylesheet" href="main.css">
                 <link rel="preconnect" href="https://fonts.gstatic.com">
                 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
-                <script src="becoming.js"></script>
+                <script type="module">
+                    import { become, speak } from "./becoming.js?${drv}";
+                    become("${drv}", "field");
+                    speak("${drv}", "mouth");
+                </script>
                 <title>${identity.name}</title>
             </head>
             <body>
@@ -107,11 +111,6 @@ let render
                         <p id="mouth"></p>
                     </section>
                 </main>
-
-                <script>
-                    become("${drv}", "field")
-                    speak("${drv}", "mouth")
-                </script>
             </body>
         </html>
             ''

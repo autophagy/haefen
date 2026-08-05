@@ -7,7 +7,7 @@ function fnv1a(str) {
     return h >>> 0;
 }
 
-function become(derivation, canvasId) {
+export function become(derivation, canvasId) {
     "use strict";
 
     function hash3(x, y, z) {
@@ -247,7 +247,7 @@ function become(derivation, canvasId) {
     start();
 }
 
-function speak(derivation, spanId) {
+export function speak(derivation, spanId) {
     const lines = [
       "wondrous is this stone-wall, wrecked by fate",
       "the city-buildings crumble, the works of the giants decay",
