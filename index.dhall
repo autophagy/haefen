@@ -63,18 +63,18 @@ let talksSection =
               , desc = "Developers X Operations Workshop"
               }
         }
-      , { ident = "2019.07.14"
-        , content =
-            C.Link
-              { src = "https://www.youtube.com/watch?v=qLoMFu14wmk"
-              , desc = "Code Styles Aren't Black And White"
-              }
-        }
       , { ident = "2020.04.17"
         , content =
             C.Link
               { src = "https://youtu.be/bO4qyBufcfQ?t=2356"
               , desc = "Functional-ish Python"
+              }
+        }
+      , { ident = "2019.07.14"
+        , content =
+            C.Link
+              { src = "https://www.youtube.com/watch?v=qLoMFu14wmk"
+              , desc = "Code Styles Aren't Black And White"
               }
         }
       ]
