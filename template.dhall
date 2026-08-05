@@ -110,7 +110,7 @@ let render
 
                 <script>
                     become("${drv}", "field")
-                    speak("mouth")
+                    speak("${drv}", "mouth")
                 </script>
             </body>
         </html>

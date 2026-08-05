@@ -1,17 +1,17 @@
+function fnv1a(str) {
+    var h = 2166136261 >>> 0;
+    for (var i = 0; i < str.length; i++) {
+        h ^= str.charCodeAt(i);
+        h = Math.imul(h, 16777619) >>> 0;
+    }
+    return h >>> 0;
+}
+
 function become(derivation, canvasId) {
     "use strict";
 
-    var SEED = (function(str) {
-        var h = 2166136261 >>> 0;
-        for (var i = 0; i < str.length; i++) {
-            h ^= str.charCodeAt(i);
-            h = Math.imul(h, 16777619) >>> 0;
-        }
-        return h >>> 0;
-    })(derivation);
-
     function hash3(x, y, z) {
-        var n = (Math.imul(x, 374761393) ^ Math.imul(y, 668265263) ^ Math.imul(z, 1442695041) ^ SEED) >>> 0;
+        var n = (Math.imul(x, 374761393) ^ Math.imul(y, 668265263) ^ Math.imul(z, 1442695041) ^ fnv1a(derivation)) >>> 0;
         n = Math.imul(n ^ (n >>> 13), 1274126177) >>> 0;
         return ((n ^ (n >>> 16)) >>> 0) / 4294967296;
     }
@@ -247,7 +247,7 @@ function become(derivation, canvasId) {
     start();
 }
 
-function speak(spanId) {
+function speak(derivation, spanId) {
     const lines = [
       "wondrous is this stone-wall, wrecked by fate",
       "the city-buildings crumble, the works of the giants decay",
@@ -291,5 +291,5 @@ function speak(spanId) {
       "how the <span class='lacuna'></span> the city"
     ];
 
-    document.getElementById(spanId).innerHTML = lines[Math.floor(Math.random() * lines.length)];
+    document.getElementById(spanId).innerHTML = lines[fnv1a(derivation) % lines.length];
 }
