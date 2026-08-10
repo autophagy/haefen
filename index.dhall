@@ -7,7 +7,7 @@ let identity = { name = "Mika Naylor", curse = "she/her" }
 let mainSection =
       [ { ident = "sympathies"
         , content =
-            C.TextList [ "reproducible builds", "type systems", "riesling" ]
+            C.TextList [ "hermetic builds", "type systems", "riesling" ]
         }
       , { ident = "labour"
         , content =
